@@ -4,12 +4,17 @@ metadata:
   name: job-configmap
   namespace: admin
 data:
-  RABBITMQ_HOST: "rabbitmq-headless.rabbitmq"
-  RABBITMQ_PORT: "5672"
+  RABBITMQ_HOST: "192.168.2.20"
+  RABBITMQ_PORT: "30672"
   controlplane: "192.168.2.10"
   workernode-1: "192.168.2.20"
   workernode-2: "192.168.2.30"
   GATEWAY_IP: "192.168.2.1"
+  VPN_PEER_IP : "172.16.1.10"
+  TRACEROUTE_TARGET: "172.16.1.10"
+  IPERF_TARGET: "172.16.1.10"
+  NC_TARGET: "10.0.0.1"
+  NC_PORT: "443"
   DB_HOST: "192.168.3.10"
   DB_PORT: "3306"
   DB_NAME: "email_agent"
@@ -17,3 +22,4 @@ data:
   S3_BUCKET: "capstone-gachon"
   S3_DATASET_KEY: "dataset/dataset_new.csv"
   ADMIN_USER_ID: "1"
+  JOB_ID: "TEST"
