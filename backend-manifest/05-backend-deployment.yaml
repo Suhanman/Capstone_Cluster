@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: suhannugul/email-agent:223134fc442db5b441836f4710b70ea85edf0731
+          image: suhannugul/email-agent:44b6e7d625ff453e7ca62e505fe0e7297899c59c
           ports:
             - containerPort: 8080
           resources:
