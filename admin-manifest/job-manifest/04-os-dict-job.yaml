@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: diag-network
+  name: diag-os
   namespace: admin
   annotations:
     argocd.argoproj.io/sync-options: "Prune=false"
@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        job-name: diag-network
+        job-name: diag-os
     spec:
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
@@ -26,12 +26,12 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
             - labelSelector:
                 matchLabels:
-                  job-name: diag-network
+                  job-name: diag-os
               topologyKey: kubernetes.io/hostname
       containers:
         - name: diag-tool
           image: suhannugul/capstonetest:latest
-          args: [ "network" ]
+          args: [ "os" ]
           env:
             - name: NODE_IP
               valueFrom:
