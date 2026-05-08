@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: admin
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        prometheus.io/path: "/actuator/prometheus"
     spec:
       serviceAccountName: job-runner-sa
       automountServiceAccountToken: true
