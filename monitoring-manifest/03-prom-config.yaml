@@ -113,3 +113,29 @@ data:
           - source_labels: [__meta_kubernetes_pod_name]
             action: replace
             target_label: pod
+
+      # 6. AWS AI 서버 메트릭 수집 (VPN: 172.16.2.10)
+      - job_name: 'aws-ai-server'
+        static_configs:
+          - targets: ['172.16.2.10:8080']
+            labels:
+              instance: 'aws-ai-server'
+        metrics_path: '/metrics'
+
+      # 7. Backend 서버 메트릭 수집
+      - job_name: 'backend'
+        metrics_path: '/actuator/prometheus'
+        kubernetes_sd_configs:
+          - role: endpoints
+            namespaces:
+              names: ['backend']
+        relabel_configs:
+          - source_labels: [__meta_kubernetes_service_name]
+            action: keep
+            regex: backend-service
+          - source_labels: [__meta_kubernetes_namespace]
+            action: replace
+            target_label: namespace
+          - source_labels: [__meta_kubernetes_pod_name]
+            action: replace
+            target_label: pod
