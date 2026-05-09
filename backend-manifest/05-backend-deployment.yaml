@@ -11,12 +11,16 @@ spec:
       app: backend
   template:
     metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8080"
       labels:
         app: backend
     spec:
       containers:
         - name: backend
-          image: suhannugul/email-agent:1ad94bf2a62f1d330a461cf3a8118a48a47ee6e2
+          image: suhannugul/email-agent:latest
           ports:
             - containerPort: 8080
           resources:

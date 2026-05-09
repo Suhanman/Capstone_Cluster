@@ -6,6 +6,10 @@ metadata:
   namespace: rabbitmq
   labels:
     app: rabbitmq
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "15692"
+    prometheus.io/path: "/metrics"
 spec:
   clusterIP: None          # Headless 핵심 설정
   publishNotReadyAddresses: true   # 클러스터링 초기화 단계에서도 DNS 노출
@@ -20,4 +24,7 @@ spec:
       protocol: TCP
     - name: epmd
       port: 4369
+      protocol: TCP
+    - name: metrics
+      port: 15692
       protocol: TCP
