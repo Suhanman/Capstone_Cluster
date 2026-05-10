@@ -1,0 +1,19 @@
+{ "jobId": "training-final-004", "jobType": "training",
+
+  "awsRegion": "ap-northeast-2", "roleArn": "arn:aws:iam::390403881443:role/service-role/AmazonSageMaker-ExecutionRole-20260430T143070",
+
+  "trainingImageUri": "390403881443.dkr.ecr.ap-northeast-2.amazonaws.com/capstone/ecr:training",
+
+  "instanceType": "ml.g4dn.xlarge", "instanceCount": 1,
+
+  "useSpotInstance": true, "maxRuntimeSeconds": 3600, "maxWaitSeconds": 7200,
+
+  "volumeSizeGb": 50,
+
+  "s3Bucket": "capstone-gachon", "datasetS3Uri": "s3://capstone-gachon/dataset/dataset_new.csv",
+
+  "modelVersion": "training-final-004", "s3ModelPrefix": "models",
+
+  "environment": { "PYTHONUNBUFFERED": "1" },
+
+  "hyperParameters": { "epochs": "10", "batch_size": "32" } }
