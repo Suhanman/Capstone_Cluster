@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: dataset-batch
-          image: suhannugul/capstonedataset:latest
+          image: 390403881443.dkr.ecr.ap-northeast-2.amazonaws.com/capstone/ecr:dataset
           command: ["python", "dataset_batch.py"]
           envFrom:
             - configMapRef:
