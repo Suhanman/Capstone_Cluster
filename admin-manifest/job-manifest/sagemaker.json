@@ -14,6 +14,8 @@
 
   "modelVersion": "training-final-004", "s3ModelPrefix": "models",
 
-  "environment": { "PYTHONUNBUFFERED": "1" },
+  "environment": { "PYTHONUNBUFFERED": "1",
+    "ADMIN_USER_ID": "1",
+    "RABBITMQ_HOST": "192.168.2.20:30672" },
 
   "hyperParameters": { "epochs": "10", "batch_size": "32" } }
