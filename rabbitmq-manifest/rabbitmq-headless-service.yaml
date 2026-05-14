@@ -19,6 +19,9 @@ spec:
     - name: amqp
       port: 5672
       protocol: TCP
+    - name: manage
+      port: 15672
+      protocol: TCP
     - name: clustering
       port: 25672
       protocol: TCP

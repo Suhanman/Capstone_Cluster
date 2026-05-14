@@ -13,8 +13,6 @@ spec:
       labels:
         job-name: diag-mq
     spec:
-      hostNetwork: true
-      dnsPolicy: ClusterFirstWithHostNet
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
