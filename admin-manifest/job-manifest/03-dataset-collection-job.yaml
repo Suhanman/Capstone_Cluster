@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: dataset-batch
-          image: suhannugul/capstonedataset:latest
+          image: suhannugul/dataset:latest
           command: ["python", "dataset_batch.py"]
           envFrom:
             - configMapRef:

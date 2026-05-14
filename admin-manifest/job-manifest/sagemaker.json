@@ -1,0 +1,16 @@
+{
+  "jobId": "training-final-004",
+  "jobType": "training",
+
+  "awsRegion": "ap-northeast-2",
+  "roleArn": "arn:aws:iam::390403881443:role/service-role/AmazonSageMaker-ExecutionRole-20260430T143070",
+
+  "trainingImageUri": "390403881443.dkr.ecr.ap-northeast-2.amazonaws.com/capstone/ecr:training",
+  "instanceType": "ml.g4dn.xlarge",
+
+  "s3Bucket": "capstone-gachon",
+  "datasetS3Uri": "s3://capstone-gachon/dataset/dataset_new.csv",
+
+  "modelVersion": "training-final-004",
+  "s3ModelPrefix": "models"
+}
