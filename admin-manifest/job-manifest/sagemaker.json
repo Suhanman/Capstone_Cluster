@@ -1,16 +1,30 @@
-{
-  "jobId": "training-final-004",
-  "jobType": "training",
+{ "jobId": "training-final-004", "jobType": "training",
 
-  "awsRegion": "ap-northeast-2",
-  "roleArn": "arn:aws:iam::390403881443:role/service-role/AmazonSageMaker-ExecutionRole-20260430T143070",
+  "awsRegion": "ap-northeast-2", "roleArn": "arn:aws:iam::390403881443:role/service-role/AmazonSageMaker-ExecutionRole-20260430T143070",
 
   "trainingImageUri": "390403881443.dkr.ecr.ap-northeast-2.amazonaws.com/capstone/ecr:training",
-  "instanceType": "ml.g4dn.xlarge",
 
-  "s3Bucket": "capstone-gachon",
-  "datasetS3Uri": "s3://capstone-gachon/dataset/dataset_new.csv",
+  "instanceType": "ml.g4dn.xlarge", "instanceCount": 1,
 
-  "modelVersion": "training-final-004",
-  "s3ModelPrefix": "models"
-}
+  "useSpotInstance": true, "maxRuntimeSeconds": 3600, "maxWaitSeconds": 7200,
+
+  "volumeSizeGb": 50,
+
+  "s3Bucket": "capstone-gachon", "datasetS3Uri": "s3://capstone-gachon/dataset/dataset_new.csv",
+
+  "modelVersion": "training-final-004", "s3ModelPrefix": "models",
+
+  "vpcConfig": {
+    "subnets": [
+      "subnet-07de48e5094f09a36"
+    ],
+    "securityGroupIds": [
+      "sg-013368ce7154f148a"
+    ]
+  },
+
+  "environment": { "PYTHONUNBUFFERED": "1",
+    "ADMIN_USER_ID": "1",
+    "RABBITMQ_HOST": "192.168.2.20" },
+
+  "hyperParameters": { "epochs": "10", "batch_size": "32" } }
