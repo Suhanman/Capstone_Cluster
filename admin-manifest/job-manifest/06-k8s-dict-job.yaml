@@ -13,6 +13,13 @@ spec:
       labels:
         job-name: diag-k8s
     spec:
+      serviceAccountName: job-runner-sa
+      tolerations:
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+          effect: "NoSchedule"
+      nodeSelector:
+        node-role.kubernetes.io/control-plane: ""
       hostNetwork: true
       dnsPolicy: ClusterFirstWithHostNet
       affinity:

@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: node-dict
+rules:
+  - apiGroups: [""] # 코어 API 그룹
+    resources: ["nodes", "pods"] # 보고 싶은 자원들
+    verbs: ["get", "list"] # 허용할 동작 (조회, 목록보기)
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: node-dict-binding
+subjects:
+  - kind: ServiceAccount
+    name: job-runner-sa      # 에러에 나온 그 이름
+    namespace: admin         # 서비스 어카운트가 있는 네임스페이스
+roleRef:
+  kind: ClusterRole
+  name: node-dict
+  apiGroup: rbac.authorization.k8s.io
