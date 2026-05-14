@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-options: "Prune=false"
 spec:
-  ttlSecondsAfterFinished: 100
+  ttlSecondsAfterFinished: 300
   template:
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: dataset-batch
-          image: suhannugul/dataset:latest
+          image: 390403881443.dkr.ecr.ap-northeast-2.amazonaws.com/capstone/ecr:dataset-batch-latest
           command: ["python", "dataset_batch.py"]
           envFrom:
             - configMapRef:
