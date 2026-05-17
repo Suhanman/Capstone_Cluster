@@ -14,3 +14,20 @@ data:
   GITHUB_BRANCH: "main"
   GITHUB_YAML_BASE_PATH: "admin-manifest/job-manifest"
   K8S_JOB_NAMESPACE: "admin"
+  ADMIN_MONITORING_GRAFANA_DASHBOARDS: '[
+  {
+    "key": "rabbitmq",
+    "label": "RabbitMQ",
+    "url": "https://grafana.studylink.click/d/rabbitmq-capstone-v9/673ea40?orgId=1&from=now-1h&to=now&timezone=Asia%2FSeoul&refresh=30s&kiosk"
+  },
+  {
+    "key": "spring",
+    "label": "Spring",
+    "url": "https://grafana.studylink.click/d/ad7v97v/ec2748b?orgId=1&from=now-24h&to=now&timezone=browser&var-application=&var-instance=&var-jvm_memory_pool_heap=&var-jvm_memory_pool_nonheap=&var-jvm_buffer_pool=&refresh=30s&kiosk"
+  },
+  {
+    "key": "ai-inference",
+    "label": "AI Inference",
+    "url": "https://grafana.studylink.click/d/adsbx4d/ai-inference-monitoring?orgId=1&from=now-6h&to=now&timezone=browser&refresh=30s&kiosk"
+  }
+]'
