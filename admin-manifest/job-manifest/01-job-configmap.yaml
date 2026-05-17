@@ -24,4 +24,3 @@ data:
   S3_BUCKET: "capstone-gachon"
   S3_DATASET_KEY: "dataset/dataset_new.csv"
   ADMIN_USER_ID: "1"
-  JOB_ID: "TEST"
