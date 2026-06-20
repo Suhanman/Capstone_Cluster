@@ -122,8 +122,10 @@ TraginigJob은 프라이빗 서브넷에서 수행되어 외부로 노출될 수
 > 📁 [AI 레포지토리](https://github.com/GachonCapstone4/AI)
 
 ### 📊 8. Prometheus + Grafana 모니터링 구축 및 CI/CD
+
 온프레미스와 클라우드 양쪽 환경의 메트릭을 단일 Grafana 대시보드로 통합 관측할 수 있도록 구성했습니다. 서비스별 응답 시간, 파드 리소스 사용량, RabbitMQ 큐 적재량 등 운영에 필요한 핵심 지표를 실시간으로 시각화합니다.
 ArgoCD를 통해서 CI/CD를 구축했습니다.
+
 ---
 
 ## 5. 문제 해결
